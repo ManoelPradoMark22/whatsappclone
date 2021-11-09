@@ -20,7 +20,7 @@ export function ChatWindow() {
       <Header>
         <HeaderInfo>
           <img src="https://i.ibb.co/hfR36cs/img-avatar2.png" alt="avatar"/>
-          <div>Manoel das das </div>
+          <div>Manoel das das asds d sa ad sdas da asd as dds das ds </div>
         </HeaderInfo>
 
         <HeaderButtons>

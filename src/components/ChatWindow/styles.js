@@ -30,6 +30,10 @@ export const HeaderInfo = styled.div`
   div {
     font-size: 17px;
     color: var(--text-dark);
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
   }
 `;
 
