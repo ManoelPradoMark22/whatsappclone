@@ -58,7 +58,12 @@ export const Button = styled.div`
 `;
 
 export const Body = styled.div`
-  
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--backgroundBodyChat);
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://i.ibb.co/xGLfpMn/background-whatsapp-back-chat.png');
 `;
 
 export const Footer = styled.div`

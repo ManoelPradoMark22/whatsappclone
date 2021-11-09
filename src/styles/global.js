@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --background-hover: #F5F5F5;
     --background-light: #F6F6F6;
     --backgroundBody: #D2DBDC;
+    --backgroundBodyChat: #E5DDD5;
     --backgroundChat: #F8F9FA;
     --backgroundChatActive: #EBEBEB;
     
