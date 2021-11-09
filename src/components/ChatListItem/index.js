@@ -9,9 +9,9 @@ import {
   LastMessage
 } from './styles';
 
-export function ChatListItem() {
+export function ChatListItem({onClick, active}) {
   return (
-    <Container>
+    <Container onClick={onClick} active={active}>
       <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="avatar"/>
       <Content>
         <Line>

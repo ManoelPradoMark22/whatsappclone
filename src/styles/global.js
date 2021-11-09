@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     --background-light: #F6F6F6;
     --backgroundBody: #D2DBDC;
     --backgroundChat: #F8F9FA;
+    --backgroundChatActive: #EBEBEB;
     
     --iconColor: #919191;
 

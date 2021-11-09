@@ -7,6 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import { ChatListItem } from '../../components/ChatListItem';
 import { ChatIntro } from '../../components/ChatIntro';
+import { ChatWindow } from '../../components/ChatWindow';
 
 import {
   Container,
@@ -22,7 +23,29 @@ import {
 
 export function Dashboard() {
 
-  const [chatlist, setChatlist] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]);
+  const [chatlist, setChatlist] = useState([
+    {
+      chatId: 1,
+      title: 'Fulado de Tal 1',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+    {
+      chatId: 2,
+      title: 'Fulado de Tal 2',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+    {
+      chatId: 3,
+      title: 'Fulado de Tal 3',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+    {
+      chatId: 4,
+      title: 'Fulado de Tal 4',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+  ]);
+  const [activeChat, setActiveChat] = useState({});
 
   return (
     <Container>
@@ -53,13 +76,18 @@ export function Dashboard() {
           {chatlist.map((item, key) => (
            <ChatListItem 
             key={key}
+            active={activeChat.chatId === chatlist[key].chatId}
+            onClick={() => setActiveChat(chatlist[key])}
            /> 
           ))}
         </ChatList>
       </SideBar>
 
       <ContentArea>
-        <ChatIntro />
+        {activeChat.chatId === undefined ?
+          <ChatIntro /> :
+          <ChatWindow />
+        }
       </ContentArea>
     </Container>
   );

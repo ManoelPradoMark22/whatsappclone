@@ -13,8 +13,10 @@ export const Container = styled.div`
     margin-left: 15px;
   }
 
+  background-color: ${(props) => props.active && 'var(--backgroundChatActive)'};
+
   &:hover {
-    background-color: var(--background-hover);
+    background-color: ${(props) => !props.active && 'var(--background-hover)'};
   }
 `;
 
