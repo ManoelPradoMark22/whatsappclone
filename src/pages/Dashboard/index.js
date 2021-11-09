@@ -6,6 +6,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 
 import { ChatListItem } from '../../components/ChatListItem';
+import { ChatIntro } from '../../components/ChatIntro';
 
 import {
   Container,
@@ -27,7 +28,7 @@ export function Dashboard() {
     <Container>
       <SideBar>
         <SideBarHeader>
-          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="avatar"/>
+          <img src="https://i.ibb.co/hfR36cs/img-avatar2.png" alt="avatar"/>
           <SideBarHeaderButtons>
             <HeaderButton>
               <DonutLargeIcon/>
@@ -58,7 +59,7 @@ export function Dashboard() {
       </SideBar>
 
       <ContentArea>
-        ...
+        <ChatIntro />
       </ContentArea>
     </Container>
   );

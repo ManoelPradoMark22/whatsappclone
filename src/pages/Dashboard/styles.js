@@ -93,6 +93,6 @@ export const ChatList = styled.div`
 `;
 
 export const ContentArea = styled.div`
-  
+  flex: 1;
 `;
 

@@ -6,14 +6,18 @@ export const GlobalStyle = createGlobalStyle`
     --background-hover: #F5F5F5;
     --background-light: #F6F6F6;
     --backgroundBody: #D2DBDC;
+    --backgroundChat: #F8F9FA;
     
     --iconColor: #919191;
 
     --divide: #DDDDDD;
     --divide-light: #EEEEEE;
+    --divide-highlight: #4ADF83;
     
     --shape: #FFFFFF;
     --text-dark: #000000;
+    --text-medium: #525252;
+    --text-submedium: #777777;
     --text-light: #999999;
 
     --scroolbar: rgba(0, 0, 0, 0.2);
