@@ -78,7 +78,9 @@ export const SearchInput = styled.div`
 `;
 
 export const ChatList = styled.div`
-
+  flex: 1;
+  background-color: var(--shape);
+  overflow-y: auto;
 `;
 
 export const ContentArea = styled.div`
