@@ -1,20 +1,12 @@
-import React from 'react';
+import { GlobalStyle } from "./styles/global";
 
-import {
-  Container,
-  SideBar,
-  ContentArea,
-} from './AppStyles';
+import { Dashboard } from "./pages/Dashboard";
 
-export default () => {
+export function App() {
   return (
-    <Container>
-      <SideBar>
-        
-      </SideBar>
-      <ContentArea>
-
-      </ContentArea>
-    </Container>
-  )
+    <>
+      <Dashboard />
+      <GlobalStyle />
+    </>
+  );
 }
