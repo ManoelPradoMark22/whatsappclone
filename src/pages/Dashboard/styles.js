@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   height: 100vh;
-  background-color: #EDEDED;
+  background-color: var(--background);
 `;
 
 export const SideBar = styled.div`
@@ -11,7 +11,7 @@ export const SideBar = styled.div`
   max-width: 414px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #DDDDDD;
+  border-right: 1px solid var(--divide);
 `;
 
 export const SideBarHeader = styled.div`
@@ -42,11 +42,41 @@ export const HeaderButton = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  svg {
+    color: var(--iconColor);
+  }
 `;
 
 export const Search = styled.div`
-
+  background-color: var(--background-light);
+  border-bottom: 1px solid var(--divide-light);
+  padding: 5px 15px;
 `;
+
+export const SearchInput = styled.div`
+  background-color: var(--shape);
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  input {
+    flex: 1;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    margin-left: 10px;
+  }
+
+  svg {
+    color: var(--iconColor);
+    font-size: small;
+  }
+`;
+
 export const ChatList = styled.div`
 
 `;
