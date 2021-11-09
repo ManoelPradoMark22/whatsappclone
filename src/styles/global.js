@@ -15,6 +15,8 @@ export const GlobalStyle = createGlobalStyle`
     --shape: #FFFFFF;
     --text-dark: #000000;
     --text-light: #999999;
+
+    --scroolbar: rgba(0, 0, 0, 0.2);
   }
 
   * {

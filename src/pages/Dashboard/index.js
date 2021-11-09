@@ -21,7 +21,7 @@ import {
 
 export function Dashboard() {
 
-  const [chatlist, setChatlist] = useState([{}, {}, {}, {}]);
+  const [chatlist, setChatlist] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]);
 
   return (
     <Container>

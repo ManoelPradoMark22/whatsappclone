@@ -81,6 +81,15 @@ export const ChatList = styled.div`
   flex: 1;
   background-color: var(--shape);
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroolbar);
+  }
 `;
 
 export const ContentArea = styled.div`
