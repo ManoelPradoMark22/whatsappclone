@@ -76,8 +76,9 @@ export function Dashboard() {
           {chatlist.map((item, key) => (
            <ChatListItem 
             key={key}
-            active={activeChat.chatId === chatlist[key].chatId}
-            onClick={() => setActiveChat(chatlist[key])}
+            data={item}
+            active={activeChat.chatId === item.chatId}
+            onClick={() => setActiveChat(item)}
            /> 
           ))}
         </ChatList>

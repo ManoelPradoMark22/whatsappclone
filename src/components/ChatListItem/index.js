@@ -9,14 +9,14 @@ import {
   LastMessage
 } from './styles';
 
-export function ChatListItem({onClick, active}) {
+export function ChatListItem({onClick, active, data}) {
   return (
     <Container onClick={onClick} active={active}>
-      <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="avatar"/>
+      <img src={data.image} alt="avatar"/>
       <Content>
         <Line>
           <Name>
-            <p title="Manoel Prado">Manoel Prado</p>
+            <p title={data.title}>{data.title}</p>
           </Name>
           <Hour>17:08</Hour>
         </Line>

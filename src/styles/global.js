@@ -12,7 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     --iconColor: #919191;
 
     --divide: #DDDDDD;
-    --divide-light: #EEEEEE;
+    --divide-medium: #CCCCCC;
+    --divide-light: #EEEEEE;    
     --divide-highlight: #4ADF83;
     
     --shape: #FFFFFF;
