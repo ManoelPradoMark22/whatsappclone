@@ -25,9 +25,10 @@ import {
 
 export function ChatWindow() {
   const [emojiOpen, setEmojiOpen] = useState(false);
+  const [text, setText] = useState('');
 
-  function handleEmojiClick() {
-
+  function handleEmojiClick(e, emojiObject) {
+    setText(text + emojiObject.emoji);
   }
 
   function handleOpenEmoji() {
@@ -91,6 +92,8 @@ export function ChatWindow() {
           <input
             type="text"
             placeholder="Digite uma mensagem"
+            value={text}
+            onChange={e => setText(e.target.value)}
           />
         </InputArea>
 
