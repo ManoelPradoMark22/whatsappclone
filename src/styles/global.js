@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     
     --iconColor: #919191;
     --iconColorActive: #009688;
+    --iconMicActive: #126ECE;
 
     --divide: #DDDDDD;
     --divide-medium: #CCCCCC;

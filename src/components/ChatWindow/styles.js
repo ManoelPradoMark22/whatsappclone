@@ -55,7 +55,7 @@ export const Button = styled.div`
   transition: all ease 0.3s;
 
   svg {
-    color: var(--iconColor);
+    color: ${(props) => props.colorActive ? props.colorActive : 'var(--iconColor)'};
   }
 `;
 
@@ -64,7 +64,7 @@ export const Body = styled.div`
   overflow-y: auto;
   background-color: var(--backgroundBodyChat);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-image: url('https://i.ibb.co/xGLfpMn/background-whatsapp-back-chat.png');
 `;
 

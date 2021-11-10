@@ -24,8 +24,17 @@ import {
 } from './styles';
 
 export function ChatWindow() {
+
+  let recognition = null;
+  let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (SpeechRecognition !== undefined) {
+    recognition = new SpeechRecognition();
+  }
+
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState('');
+  const [listening, setListening] = useState(false);
 
   function handleEmojiClick(e, emojiObject) {
     setText(text + emojiObject.emoji);
@@ -37,6 +46,28 @@ export function ChatWindow() {
 
   function handleCloseEmoji() {
     setEmojiOpen(false);
+  }
+
+  function handleMicClick() {
+    if (recognition !== null) {
+      
+      recognition.onstart = () => {
+        setListening(true);
+      }
+      recognition.onend = () => {
+        setListening(false);
+      }
+      recognition.onresult = (e) => {
+        setText(e.results[0][0].transcript);
+        console.log(e.results)
+      }
+
+      recognition.start();
+    }
+  }
+
+  function handleSendClick() {
+    
   }
 
   return (
@@ -81,10 +112,8 @@ export function ChatWindow() {
             <CloseIcon />
           </Button>
 
-          <Button onClick={handleOpenEmoji}>
-            <InsertEmoticonIcon
-              style={{color: emojiOpen ? 'var(--iconColorActive)' : 'var(--iconColor)'}}
-            />
+          <Button onClick={handleOpenEmoji} colorActive={emojiOpen ? 'var(--iconColorActive)' : 'var(--iconColor)'}>
+            <InsertEmoticonIcon/>
           </Button>
         </LeftFooterContent>
 
@@ -98,9 +127,15 @@ export function ChatWindow() {
         </InputArea>
 
         <RightFooterContent>
-          <Button>
-            <SendIcon />
-          </Button>
+          {text === '' ?
+            <Button onClick={handleMicClick} colorActive={listening ? 'var(--iconMicActive)' : 'var(--iconColor)'}>
+              <MicIcon />
+            </Button>
+          :
+            <Button onClick={handleSendClick}>
+              <SendIcon />
+            </Button>
+          }
         </RightFooterContent>
       </Footer>
     </Container>
