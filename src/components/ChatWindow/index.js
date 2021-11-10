@@ -3,6 +3,10 @@ import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import CloseIcon from '@material-ui/icons/Close';
+import SendIcon from '@material-ui/icons/Send';
+import MicIcon from '@material-ui/icons/Mic';
 
 import {
   Container,
@@ -12,6 +16,9 @@ import {
   Button,
   Body,
   Footer,
+  LeftFooterContent,
+  InputArea,
+  RightFooterContent
 } from './styles';
 
 export function ChatWindow() {
@@ -41,7 +48,24 @@ export function ChatWindow() {
       </Body>
 
       <Footer>
+        <LeftFooterContent>
+          <Button>
+            <InsertEmoticonIcon />
+          </Button>
+        </LeftFooterContent>
 
+        <InputArea>
+          <input
+            type="text"
+            placeholder="Digite uma mensagem"
+          />
+        </InputArea>
+
+        <RightFooterContent>
+          <Button>
+            <SendIcon />
+          </Button>
+        </RightFooterContent>
       </Footer>
     </Container>
   )

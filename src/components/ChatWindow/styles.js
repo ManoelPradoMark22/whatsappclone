@@ -67,5 +67,33 @@ export const Body = styled.div`
 `;
 
 export const Footer = styled.div`
-  
+  height: 62px;
+  display: flex;
+  align-items: center;
+`;
+
+export const LeftFooterContent = styled.div`
+  display: flex;
+  margin: 0 15px;
+`;
+
+export const InputArea = styled.div`
+  flex: 1;
+
+  input {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    background: var(--shape);
+    border-radius: 20px;
+    font-size: 15px;
+    color: var(--inputChat);
+    padding: 0 15px;
+  }
+`;
+
+export const RightFooterContent = styled.div`
+  display: flex;
+  margin: 0 15px;
 `;

@@ -23,6 +23,8 @@ export const GlobalStyle = createGlobalStyle`
     --text-submedium: #777777;
     --text-light: #999999;
 
+    --inputChat: #4a4a4a;
+
     --scroolbar: rgba(0, 0, 0, 0.2);
   }
 
