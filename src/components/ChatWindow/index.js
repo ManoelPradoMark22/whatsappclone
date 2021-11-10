@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import EmojiPicker from 'emoji-picker-react';
 
 import SearchIcon from '@material-ui/icons/Search';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
@@ -15,6 +16,7 @@ import {
   HeaderButtons,
   Button,
   Body,
+  EmojiArea,
   Footer,
   LeftFooterContent,
   InputArea,
@@ -22,6 +24,20 @@ import {
 } from './styles';
 
 export function ChatWindow() {
+  const [emojiOpen, setEmojiOpen] = useState(false);
+
+  function handleEmojiClick() {
+
+  }
+
+  function handleOpenEmoji() {
+    setEmojiOpen(true);
+  }
+
+  function handleCloseEmoji() {
+    setEmojiOpen(false);
+  }
+
   return (
     <Container>
       <Header>
@@ -47,10 +63,27 @@ export function ChatWindow() {
 
       </Body>
 
+      <EmojiArea style={{height: emojiOpen ? '200px' : '0px'}}>
+        <EmojiPicker 
+          onEmojiClick={handleEmojiClick}
+          disableSearchBar
+          disableSkinTonePicker
+        />
+      </EmojiArea>
+
       <Footer>
         <LeftFooterContent>
-          <Button>
-            <InsertEmoticonIcon />
+          <Button 
+            style={{width: emojiOpen ? '40px' : 0}}
+            onClick={handleCloseEmoji}
+          >
+            <CloseIcon />
+          </Button>
+
+          <Button onClick={handleOpenEmoji}>
+            <InsertEmoticonIcon
+              style={{color: emojiOpen ? 'var(--iconColorActive)' : 'var(--iconColor)'}}
+            />
           </Button>
         </LeftFooterContent>
 

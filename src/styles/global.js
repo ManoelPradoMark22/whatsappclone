@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     --backgroundChatActive: #EBEBEB;
     
     --iconColor: #919191;
+    --iconColorActive: #009688;
 
     --divide: #DDDDDD;
     --divide-medium: #CCCCCC;

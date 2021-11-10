@@ -51,6 +51,8 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  overflow: hidden;
+  transition: all ease 0.3s;
 
   svg {
     color: var(--iconColor);
@@ -64,6 +66,21 @@ export const Body = styled.div`
   background-size: cover;
   background-position: center;
   background-image: url('https://i.ibb.co/xGLfpMn/background-whatsapp-back-chat.png');
+`;
+
+export const EmojiArea = styled.div`
+  height: 200px;
+  overflow-y: hidden;
+  transition: all ease 0.3s;
+
+  aside {
+    width: auto;
+    background: none;
+  }
+
+  & .emoji-picker-react .emoji-group:before {
+    background: none;
+  }
 `;
 
 export const Footer = styled.div`
