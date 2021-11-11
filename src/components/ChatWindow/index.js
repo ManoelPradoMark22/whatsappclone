@@ -9,6 +9,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
+import { MessageItem } from '../MessageItem';
+
 import {
   Container,
   Header,
@@ -35,6 +37,7 @@ export function ChatWindow() {
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState('');
   const [listening, setListening] = useState(false);
+  const [list, setList] = useState([{},{},{}]);
 
   function handleEmojiClick(e, emojiObject) {
     setText(text + emojiObject.emoji);
@@ -92,7 +95,12 @@ export function ChatWindow() {
       </Header>
 
       <Body>
-
+        {list.map((item, key) =>
+          <MessageItem 
+            key={key}
+            data={item}
+          />
+        )}
       </Body>
 
       <EmojiArea style={{height: emojiOpen ? '200px' : '0px'}}>

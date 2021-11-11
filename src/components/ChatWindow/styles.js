@@ -66,6 +66,7 @@ export const Body = styled.div`
   background-size: cover;
   background-position: top;
   background-image: url('https://i.ibb.co/xGLfpMn/background-whatsapp-back-chat.png');
+  padding: 20px 30px;
 `;
 
 export const EmojiArea = styled.div`
