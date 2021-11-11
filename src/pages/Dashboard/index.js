@@ -110,6 +110,7 @@ export function Dashboard() {
           <ChatIntro /> :
           <ChatWindow 
             user={user}
+            data={activeChat}
           />
         }
       </ContentArea>

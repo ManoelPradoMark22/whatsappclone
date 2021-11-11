@@ -9,6 +9,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 
+import Api from '../../Api';
+
 import { MessageItem } from '../MessageItem';
 
 import {
@@ -25,7 +27,7 @@ import {
   RightFooterContent
 } from './styles';
 
-export function ChatWindow({user}) {
+export function ChatWindow({user, data}) {
 
   const body = useRef();
 
@@ -39,175 +41,7 @@ export function ChatWindow({user}) {
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState('');
   const [listening, setListening] = useState(false);
-  const [list, setList] = useState([
-    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },    { 
-      author: 123,
-      body: 'bla bla bla bla bla bla bla'
-    },
-    { 
-      author: 123,
-      body: 'bla bla bla'
-    },
-    { 
-      author: 1234,
-      body: 'bla!'
-    },
-  ]);
+  const [list, setList] = useState([]);
 
   function handleEmojiClick(e, emojiObject) {
     setText(text + emojiObject.emoji);
@@ -243,6 +77,12 @@ export function ChatWindow({user}) {
   }
 
   useEffect(() => {
+    setList([]);
+    let unsub = Api.onChatContent(data.chatId, setList);
+    return unsub;
+  }, [data.chatId]);
+
+  useEffect(() => {
     if(body.current.scrollHeight > body.current.offsetHeight) {
       body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
     }
@@ -252,8 +92,8 @@ export function ChatWindow({user}) {
     <Container>
       <Header>
         <HeaderInfo>
-          <img src="https://i.ibb.co/hfR36cs/img-avatar2.png" alt="avatar"/>
-          <div>Manoel das das asds d sa ad sdas da asd as dds das ds </div>
+          <img src={data.image} alt="avatar"/>
+          <div>{data.title}</div>
         </HeaderInfo>
 
         <HeaderButtons>

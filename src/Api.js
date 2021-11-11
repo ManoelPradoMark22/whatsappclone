@@ -72,7 +72,13 @@ export default {
         }
       }
     });
+  },
+  onChatContent:(chatId, setList) => {
+    return db.collection('chats').doc(chatId).onSnapshot((doc) => {
+      if(doc.exists) {
+        let data = doc.data();
+        setList(data.messages);
+      }
+    })
   }
 }
-
-/*merge:true faz com q se ja existir ele nao faz um novo, mas atualiza*/
