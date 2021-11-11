@@ -72,8 +72,18 @@ export function ChatWindow({user, data}) {
     }
   }
 
+  function handleInputKeyUp(e) {
+    if (e.keyCode === 13){
+      handleSendClick();
+    }
+  }
+
   function handleSendClick() {
-    
+    if(text !== 1) {
+      Api.sendMessage(data, user.id, 'text', text);
+      setText('');
+      setEmojiOpen(false);
+    }
   }
 
   useEffect(() => {
@@ -147,6 +157,7 @@ export function ChatWindow({user, data}) {
             placeholder="Digite uma mensagem"
             value={text}
             onChange={e => setText(e.target.value)}
+            onKeyUp={handleInputKeyUp}
           />
         </InputArea>
 
