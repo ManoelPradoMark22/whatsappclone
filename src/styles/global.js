@@ -32,6 +32,15 @@ export const GlobalStyle = createGlobalStyle`
     --scroolbar: rgba(0, 0, 0, 0.2);
   }
 
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroolbar);
+  }
+
   * {
     box-sizing: border-box;
   }

@@ -44,6 +44,26 @@ export function Dashboard() {
       title: 'Fulado de Tal 4',
       image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
     },
+    {
+      chatId: 5,
+      title: 'Fulado de Tal 1',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+    {
+      chatId: 6,
+      title: 'Fulado de Tal 2',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+    {
+      chatId: 7,
+      title: 'Fulado de Tal 3',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
+    {
+      chatId: 8,
+      title: 'Fulado de Tal 4',
+      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
+    },
   ]);
   const [activeChat, setActiveChat] = useState({});
   const [user, setUser] = useState({

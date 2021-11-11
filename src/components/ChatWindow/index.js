@@ -50,6 +50,161 @@ export function ChatWindow({user}) {
       author: 1234,
       body: 'bla!'
     },
+    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },
   ]);
 
   function handleEmojiClick(e, emojiObject) {
@@ -75,7 +230,6 @@ export function ChatWindow({user}) {
       }
       recognition.onresult = (e) => {
         setText(e.results[0][0].transcript);
-        console.log(e.results)
       }
 
       recognition.start();
