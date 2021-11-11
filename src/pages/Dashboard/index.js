@@ -27,50 +27,13 @@ import {
 
 export function Dashboard() {
 
-  const [chatlist, setChatlist] = useState([
-    {
-      chatId: 1,
-      title: 'Fulado de Tal 1',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 2,
-      title: 'Fulado de Tal 2',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 3,
-      title: 'Fulado de Tal 3',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 4,
-      title: 'Fulado de Tal 4',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 5,
-      title: 'Fulado de Tal 1',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 6,
-      title: 'Fulado de Tal 2',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 7,
-      title: 'Fulado de Tal 3',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-    {
-      chatId: 8,
-      title: 'Fulado de Tal 4',
-      image: 'https://i.ibb.co/hfR36cs/img-avatar2.png'
-    },
-  ]);
+  const [chatlist, setChatlist] = useState([]);
   const [activeChat, setActiveChat] = useState({});
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    id: 'WrjftZ1SRac8S4LlGW7FqVUX3HX2',
+    name: 'Manoel Prado',
+    avatar: 'https://graph.facebook.com/137980625243484/picture' 
+  });
   const [showNewChat, setShowNewChat] = useState(false);
 
   function handleOpenNewChat() {
