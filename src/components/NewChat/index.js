@@ -26,6 +26,12 @@ export function NewChat({
     setShow(false);
   }
 
+  async function addNewChat(user2) {
+    await Api.addNewChat(user, user2);
+
+    handleClose();
+  }
+
   useEffect(() => {
     const getList = async () => {
       if(user !== null) {
@@ -50,7 +56,10 @@ export function NewChat({
       </Header>
       <List>
         {list.map((item, key) => (
-          <Contact key={key}>
+          <Contact 
+            onClick={() => addNewChat(item)}
+            key={key}
+          >
             <img src={item.avatar} alt='avatar'/>
             <ContactName title={item.name}>
               <p>
