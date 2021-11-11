@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import EmojiPicker from 'emoji-picker-react';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -26,6 +26,8 @@ import {
 } from './styles';
 
 export function ChatWindow({user}) {
+
+  const body = useRef();
 
   let recognition = null;
   let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -240,6 +242,12 @@ export function ChatWindow({user}) {
     
   }
 
+  useEffect(() => {
+    if(body.current.scrollHeight > body.current.offsetHeight) {
+      body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+    }
+  }, [list]);
+
   return (
     <Container>
       <Header>
@@ -261,7 +269,7 @@ export function ChatWindow({user}) {
         </HeaderButtons>
       </Header>
 
-      <Body>
+      <Body ref={body}>
         {list.map((item, key) =>
           <MessageItem 
             key={key}
