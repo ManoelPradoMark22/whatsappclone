@@ -41,6 +41,16 @@ export const HeaderTitle = styled.div`
   font-weight: bold;
   margin-left: 20px;
   color: var(--shape);
+
+  flex-wrap: wrap;
+  min-width: 0;
+
+  p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
 `;
 
 export const List = styled.div`

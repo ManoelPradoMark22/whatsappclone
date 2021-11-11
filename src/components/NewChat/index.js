@@ -18,7 +18,9 @@ export function NewChat() {
           <ArrowBackIcon />
         </BackButton>
         <HeaderTitle>
-          Nova Conversa 
+          <p>
+            Nova Conversa
+          </p> 
         </HeaderTitle>
       </Header>
       <List>
