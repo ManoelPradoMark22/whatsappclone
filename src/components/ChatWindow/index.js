@@ -25,7 +25,7 @@ import {
   RightFooterContent
 } from './styles';
 
-export function ChatWindow() {
+export function ChatWindow({user}) {
 
   let recognition = null;
   let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -37,7 +37,20 @@ export function ChatWindow() {
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState('');
   const [listening, setListening] = useState(false);
-  const [list, setList] = useState([{},{},{}]);
+  const [list, setList] = useState([
+    { 
+      author: 123,
+      body: 'bla bla bla bla bla bla bla'
+    },
+    { 
+      author: 123,
+      body: 'bla bla bla'
+    },
+    { 
+      author: 1234,
+      body: 'bla!'
+    },
+  ]);
 
   function handleEmojiClick(e, emojiObject) {
     setText(text + emojiObject.emoji);
@@ -99,6 +112,7 @@ export function ChatWindow() {
           <MessageItem 
             key={key}
             data={item}
+            user={user}
           />
         )}
       </Body>

@@ -7,12 +7,12 @@ import {
   MessageDate,
 } from './styles';
 
-export function MessageItem() {
+export function MessageItem({data, user}) {
   return (
-    <Container>
-      <MessageContent>
+    <Container isAuthor={user.id === data.author}>
+      <MessageContent isAuthor={user.id === data.author}>
         <MessageText>
-        blablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab blablablablab bla
+          {data.body}
         </MessageText>
         <MessageDate>
           19:50

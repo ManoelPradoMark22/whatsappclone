@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     --backgroundBodyChat: #E5DDD5;
     --backgroundChat: #F8F9FA;
     --backgroundChatActive: #EBEBEB;
+
+    --messageAuthor: #DCF8C6;
     
     --iconColor: #919191;
     --iconColorActive: #009688;

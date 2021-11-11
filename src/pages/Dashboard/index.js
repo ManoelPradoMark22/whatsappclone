@@ -46,12 +46,17 @@ export function Dashboard() {
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
+  const [user, setUser] = useState({
+    id: 1234,
+    avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png',
+    name: 'Manoel Prado'
+  });
 
   return (
     <Container>
       <SideBar>
         <SideBarHeader>
-          <img src="https://i.ibb.co/hfR36cs/img-avatar2.png" alt="avatar"/>
+          <img src={user.avatar} alt="avatar"/>
           <SideBarHeaderButtons>
             <HeaderButton>
               <DonutLargeIcon/>
@@ -87,7 +92,9 @@ export function Dashboard() {
       <ContentArea>
         {activeChat.chatId === undefined ?
           <ChatIntro /> :
-          <ChatWindow />
+          <ChatWindow 
+            user={user}
+          />
         }
       </ContentArea>
     </Container>

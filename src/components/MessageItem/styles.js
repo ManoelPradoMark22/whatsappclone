@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin-bottom: 10px;
   display: flex;
+  justify-content: ${(props) => props.isAuthor ? 'flex-end' : 'flex-start'};
 `;
 
 export const MessageContent = styled.div`
@@ -13,6 +14,7 @@ export const MessageContent = styled.div`
   flex-direction: column;
   padding: 3px;
   max-width: 90%;
+  background-color: ${(props) => props.isAuthor ? 'var(--messageAuthor)' : 'var(--shape)'};
 `;
 export const MessageText = styled.div`
   font-size: 14px;
