@@ -72,11 +72,21 @@ export function Dashboard() {
     avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png',
     name: 'Manoel Prado'
   });
+  const [showNewChat, setShowNewChat] = useState(false);
+
+  function handleOpenNewChat() {
+    setShowNewChat(true);
+  }
 
   return (
     <Container>
       <SideBar>
-        <NewChat />
+        <NewChat
+          chatlist={chatlist}
+          user={user}
+          show={showNewChat}
+          setShow={setShowNewChat}
+        />
 
         <SideBarHeader>
           <img src={user.avatar} alt="avatar"/>
@@ -84,7 +94,7 @@ export function Dashboard() {
             <HeaderButton>
               <DonutLargeIcon/>
             </HeaderButton>
-            <HeaderButton>
+            <HeaderButton onClick={handleOpenNewChat}>
               <ChatIcon/>
             </HeaderButton>
             <HeaderButton>

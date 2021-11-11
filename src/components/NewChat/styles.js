@@ -4,13 +4,15 @@ export const Container = styled.div`
   width: 35%;
   max-width: 415px;
   position: fixed;
-  left: 0;
+  left: ${(props) => props.show ? 0 : '-415px'};
   top: 0;
   bottom: 0;
   background-color: var(--shape);
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--divide);
+
+  transition: all ease 0.5s;
 `;
 
 export const Header = styled.div`
