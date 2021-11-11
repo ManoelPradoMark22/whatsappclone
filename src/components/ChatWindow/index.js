@@ -42,6 +42,7 @@ export function ChatWindow({user, data}) {
   const [text, setText] = useState('');
   const [listening, setListening] = useState(false);
   const [list, setList] = useState([]);
+  const [users, setUsers] = useState([]);
 
   function handleEmojiClick(e, emojiObject) {
     setText(text + emojiObject.emoji);
@@ -80,7 +81,7 @@ export function ChatWindow({user, data}) {
 
   function handleSendClick() {
     if(text !== 1) {
-      Api.sendMessage(data, user.id, 'text', text);
+      Api.sendMessage(data, user.id, 'text', text, users);
       setText('');
       setEmojiOpen(false);
     }
@@ -88,7 +89,7 @@ export function ChatWindow({user, data}) {
 
   useEffect(() => {
     setList([]);
-    let unsub = Api.onChatContent(data.chatId, setList);
+    let unsub = Api.onChatContent(data.chatId, setList, setUsers);
     return unsub;
   }, [data.chatId]);
 
