@@ -13,5 +13,13 @@ export default {
     const provider = new firebase.auth.FacebookAuthProvider();
     let result = await firebaseApp.auth().signInWithPopup(provider);
     return result;
+  },
+  addUser:async (u) => {
+    await db.collection('users').doc(u.id).set({
+      name: u.name,
+      avatar: u.avatar
+    }, {merge:true})
   }
 }
+
+/*merge:true faz com q se ja existir ele nao faz um novo, mas atualiza*/
