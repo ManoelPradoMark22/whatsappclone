@@ -50,6 +50,13 @@ export function Dashboard() {
     setUser(newUser);
   }
 
+  useEffect(() => {
+    if(user!==null){
+      let unsub = Api.onChatList(user.id, setChatlist);
+      return unsub;
+    }
+  }, [user]);
+
   if (user === null) {
     return (<Login onReceive={handleLoginData}/>)
   }

@@ -23,7 +23,7 @@ export function ChatListItem({onClick, active, data}) {
 
         <Line>
           <LastMessage>
-            <p title="Olá Mundo! Seja bem vindo ao REACT!">Olá Mundo! Seja bem vindo ao REACT!</p>
+            <p title={data.lastMessage}>{data.lastMessage}</p>
           </LastMessage>
         </Line>
       </Content>
