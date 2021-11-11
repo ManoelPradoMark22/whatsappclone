@@ -8,6 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { ChatListItem } from '../../components/ChatListItem';
 import { ChatIntro } from '../../components/ChatIntro';
 import { ChatWindow } from '../../components/ChatWindow';
+import { NewChat } from '../../components/NewChat';
 
 import {
   Container,
@@ -75,6 +76,8 @@ export function Dashboard() {
   return (
     <Container>
       <SideBar>
+        <NewChat />
+
         <SideBarHeader>
           <img src={user.avatar} alt="avatar"/>
           <SideBarHeaderButtons>

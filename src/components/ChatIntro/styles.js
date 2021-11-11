@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  border-bottom: 6px solid var(--divide-highlight);
+  border-bottom: 6px solid var(--primary-light);
 
   img {
     width: 250px;

@@ -9,17 +9,19 @@ export const GlobalStyle = createGlobalStyle`
     --backgroundBodyChat: #E5DDD5;
     --backgroundChat: #F8F9FA;
     --backgroundChatActive: #EBEBEB;
+    
+    --primary: #00bfa5;
+    --primary-active: #009688;
+    --primary-light: #4ADF83;
 
     --messageAuthor: #DCF8C6;
     
     --iconColor: #919191;
-    --iconColorActive: #009688;
     --iconMicActive: #126ECE;
 
     --divide: #DDDDDD;
     --divide-medium: #CCCCCC;
     --divide-light: #EEEEEE;    
-    --divide-highlight: #4ADF83;
     
     --shape: #FFFFFF;
     --text-dark: #000000;

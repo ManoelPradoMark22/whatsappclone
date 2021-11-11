@@ -296,7 +296,7 @@ export function ChatWindow({user}) {
             <CloseIcon />
           </Button>
 
-          <Button onClick={handleOpenEmoji} colorActive={emojiOpen ? 'var(--iconColorActive)' : 'var(--iconColor)'}>
+          <Button onClick={handleOpenEmoji} colorActive={emojiOpen ? 'var(--primary-active)' : 'var(--iconColor)'}>
             <InsertEmoticonIcon/>
           </Button>
         </LeftFooterContent>
