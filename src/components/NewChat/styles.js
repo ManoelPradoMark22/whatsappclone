@@ -54,5 +54,39 @@ export const HeaderTitle = styled.div`
 `;
 
 export const List = styled.div`
-  
+  flex: 1;
+  overflow-y: auto;
+`;
+
+export const Contact = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  &:hover {
+    background-color: var(--background-hover);
+  }
+`;
+
+export const ContactName = styled.div`
+  font-size: 17px;
+  color: var(--text-dark);
+
+  flex-wrap: wrap;
+  min-width: 0;
+
+  p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
 `;

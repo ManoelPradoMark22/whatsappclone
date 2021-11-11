@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
@@ -8,9 +8,19 @@ import {
   BackButton,
   HeaderTitle,
   List,
+  Contact,
+  ContactName
 } from './styles';
 
 export function NewChat() {
+  const [list, setList] = useState([
+    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
+    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
+    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
+    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
+    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
+  ])
+
   return (
     <Container>
       <Header>
@@ -24,7 +34,16 @@ export function NewChat() {
         </HeaderTitle>
       </Header>
       <List>
-
+        {list.map((item, key) => (
+          <Contact key={key}>
+            <img src={item.avatar} alt='avatar'/>
+            <ContactName title={item.name}>
+              <p>
+                {item.name}
+              </p>
+            </ContactName>
+          </Contact>
+        ))}
       </List>
     </Container>
   )
