@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   Container,
@@ -10,6 +10,21 @@ import {
 } from './styles';
 
 export function ChatListItem({onClick, active, data}) {
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+     if(data.lastMessageDate > 0) {
+        let d = new Date(data.lastMessageDate.seconds * 1000);
+        let hours = d.getHours();
+        let minutes = d.getMinutes();
+
+        hours = hours < 10 ? '0'+hours : hours;
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+
+        setTime(`${hours}:${minutes}`);
+     }
+  }, [data]);
+
   return (
     <Container onClick={onClick} active={active}>
       <img src={data.image} alt="avatar"/>
@@ -18,7 +33,7 @@ export function ChatListItem({onClick, active, data}) {
           <Name>
             <p title={data.title}>{data.title}</p>
           </Name>
-          <Hour>17:08</Hour>
+          <Hour>{time}</Hour>
         </Line>
 
         <Line>
