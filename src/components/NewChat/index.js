@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
+import Api from '../../Api';
 
 import {
   Container,
@@ -18,17 +20,21 @@ export function NewChat({
   show,
   setShow
 }) {
-  const [list, setList] = useState([
-    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
-    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
-    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
-    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
-    {id: 123, avatar: 'https://i.ibb.co/hfR36cs/img-avatar2.png', name: 'Manoel Prado'},
-  ])
+  const [list, setList] = useState([]);
 
   function handleClose() {
     setShow(false);
   }
+
+  useEffect(() => {
+    const getList = async () => {
+      if(user !== null) {
+        let results = await Api.getContactList(user.id);
+        setList(results);
+      }
+    }
+    getList();
+  }, [user])
 
   return (
     <Container show={show}>
