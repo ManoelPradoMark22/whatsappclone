@@ -29,11 +29,7 @@ export function Dashboard() {
 
   const [chatlist, setChatlist] = useState([]);
   const [activeChat, setActiveChat] = useState({});
-  const [user, setUser] = useState({
-    id: 'WrjftZ1SRac8S4LlGW7FqVUX3HX2',
-    name: 'Manoel Prado',
-    avatar: 'https://graph.facebook.com/137980625243484/picture' 
-  });
+  const [user, setUser] = useState(null);
   const [showNewChat, setShowNewChat] = useState(false);
 
   function handleOpenNewChat() {
